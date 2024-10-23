@@ -155,6 +155,7 @@
   background-color: green; 
   z-index: 1;
   float: left;
+  
 
 } 
 .yellow5 {
@@ -167,6 +168,7 @@
   width: 100%; 
   height: 100px; 
   background-color: blue;
+  clear: both;
 } 
 
 /* Activity 6 styles */ 
