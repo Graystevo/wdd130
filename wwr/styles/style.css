@@ -44,7 +44,7 @@ footer{
     background-color:#386150;
     color:#f3dfbf ;
     padding: 25px 50px;
-    margin-top: 200px; 
+    /* margin-top: 50px;  */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -57,7 +57,7 @@ footer a:hover{
     color:white ;
 }
 footer p {
-    font-size: 1.2em;
+    font-size: 22px;
 }
 footer p a:hover {
     text-decoration: underline;
@@ -102,7 +102,7 @@ h4{
     color:#f3dfbf ;
     font-family: 'Rock Salt', 'Bradley Hand', sans-serif;
     font-size: 2em;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .button-box {
     text-align: center;
@@ -181,7 +181,7 @@ main section img {
 }
 .msg p{
     color:#f3dfbf ;
-    font-size: .8m;
+    font-size: 1em;
     padding-bottom: 15px;
 }
 .msg h2{
@@ -189,9 +189,86 @@ main section img {
 }
 
 
+/* General Grid Layout for the Rivers Page */
+.rivers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 10px; /* Space between the columns */
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    height: 100%; /* Ensure grid stretches to full height of parent container */
+}
+.river-column-1, .river-column-2, .river-column-3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3e8d3;
+    height: 100%; /* Ensure column stretches to full height */
+}
+
+/* River Name Box */
+.river-name-box {
+    background-color: #386150;
+    color: #f3dfbf;
+    padding: 6px;
+    text-align: center;
+    /* border-radius: 8px 8px 0 0; */
+    font-size: 1.2em;
+}
+.river-name-box h3 {
+    margin: 5px;
+}
+
+/* River Image */
+
+.river-column-1 .river-image, .river-column-3 .river-image{
+    margin-top: -2px;
+}
+
+.river-column-2 .river-image{
+    margin-bottom: -6px;
+}
+
+.river-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;  /* Keep the image covering the space without distortion */
+    max-height: 400px;
+}
+
+/* River Description Box */
+.river-column-2 .river-description {
+    margin-top: 0px;
+    border-top: 4px solid #386150; /* Add a solid border */
+}
+
+.river-column-1 .river-description, .river-column-3 .river-description{
+    border-bottom: 4px solid #386150; /* Add a solid border */
+}
+
+.river-description {
+    margin-top: -5px;
+    background-color: #fcfbfb;
+    color: #3e4137;
+    font-size: 1em;
+    line-height: 1.6em;
+    overflow-y: auto; /* Allow scrolling if description is too long */
+    flex-grow: 1; /* Ensure description stretches to fill the remaining space */
+    height: 300px; /* Make description box height flexible */
+    border-left: 3px solid #386150; /* Add a solid border */
+    border-right: 3px solid #386150; /* Add a solid border */
+}
+
+.river-description p{
+    padding-left: 5px;
+    margin-bottom: 12px;
+    margin: 10px;
+    margin-top: 0px;
+}
 
 
-@media screen and (max-width: 900px) {
+/* VIEW FOR MOBILE DEVICES */
+@media screen and (max-width: 950px) {
     #hero, .home-grid {
         display: block;
         height: auto;
@@ -235,5 +312,14 @@ main section img {
     }
     footer {
         margin-top: 25px;
+    }
+
+    /* Adjustements to the rivers.html mobile viewing */
+    .rivers-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .river-description {
+        height: auto; /* Allow descriptions to grow based on content */
     }
 }
