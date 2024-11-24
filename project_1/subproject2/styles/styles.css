@@ -1,0 +1,326 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Layout Styling */
+header {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Logo, Title, Empty Space */
+    grid-template-rows: auto auto; /* Separate rows for title and nav */
+    gap: 10px;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo img {
+    grid-column: 1 / 2; /* Place in the first column */
+    width: 80px;
+    height: auto;
+    justify-self: start;
+}
+
+.header-title {
+    grid-column: 2 / 3; /* Span across the middle and right columns */
+    grid-row: 1 / 1;
+    text-align: center;
+}
+
+.header-title h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.header-title p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.header-nav {
+    grid-column: 2 / 3; /* Span full width below the title */
+    grid-row: 2 / 3; /* Second row for nav */
+    text-align: center;
+    margin-top: -20px;
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.header-nav li {
+    display: inline;
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #005a99;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline; /* Display list items in a line */
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0078D4;
+}
+
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* FOOTER STYLING */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Logo, Title, Empty Space */
+    grid-template-rows: auto auto; /* Separate rows for title and nav */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+footer p {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    text-align: center;
+}
+
+footer .social-links {
+    grid-column: 3 / 4;
+    grid-row: 1;
+    text-align: left;
+    display: flex;
+    gap: 10px; /* Space between social icons */
+    justify-content: left;
+    
+}
+
+footer .social-links img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+footer main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* MAIN PAGE CONTENT CHANGED BELOW */
+
+/* Background image CSS */
+body {
+    height: 100%; /* Ensures the body and html elements cover the full viewport height */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling if the image extends beyond the viewport */
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240607/pngtree-colorful-rainbow-birthday-party-border-frame-background-generate-ai-image_15742737.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Keeps the background in place when scrolling */
+    background-position: center center; /* Centers the image */
+}
+
+/* Optional overlay for readability */
+body::before {
+    content: "";
+    position: fixed; /* Set to fixed to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensures overlay height matches viewport height */
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust transparency as needed */
+    z-index: -1; /* Places overlay behind content */
+}
+
+/* Main Content Styling */
+main {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent background for readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+
+/* Welcome Message */
+.welcome-message h2 {
+    color: #ffd700;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.welcome-message p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #d3bef5;
+}
+
+/* Photo Gallery */
+.photo-gallery h2 {
+    color: #ffa500;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Birthday Wishes */
+.birthday-wishes h2 {
+    color: #ffa500;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.wish-card {
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.wish-card p {
+    color: #d3bef5; /* Soft lavender for a celebratory feel */
+    font-size: 1.1em;
+    font-style: italic;
+}
+.wish-card h4 {
+    color: #805abd; /* Soft lavender for a celebratory feel */
+    font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    font-style: Bold;
+    text-decoration: underline;
+}
+
+/* Video Section Styling */
+.birthday-video {
+    background-color: rgba(30, 30, 30, 0.8); /* Matching main content style */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    text-align: center;
+    color: #ffa500;
+}
+
+.birthday-video h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* YouTube Player Styling */
+#player {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+}
+
+/* Responsive Styling FOR MOBILE DEVICES */
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    body {
+        background-position: left center; /* Show more of the left side on mobile */
+    }
+    .welcome-message h2 {
+        font-size: 1.8em;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, 1fr);
+    }
+
+    .birthday-wishes h2 {
+        font-size: 1.6em;
+    }
+
+    .wish-card p {
+        font-size: 1em;
+    }
+}
+
