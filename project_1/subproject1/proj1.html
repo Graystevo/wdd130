@@ -32,6 +32,9 @@
         <!-- Page content goes here -->
         <div class="paint-container">
             <div class="top-bar">
+                <button id="bucketTool" class="toolButton">
+                    <img src="../images/paint-bucket.png" alt="Bucket Tool" class="icon">
+                </button>
                 <label for="colorPicker">Brush Color:</label>
                 <input type="color" id="colorPicker" value="#000000">
                 <label for="brushSize">Brush Size:</label>
@@ -42,9 +45,16 @@
                 <button id="downloadCanvas">
                     <img src="../images/save.png" alt="Download Canvas" class="icon">
                 </button>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                      <p>The fill feature is not working yet.</p>
+                      <button id="closePopup">Close</button>
+                    </div>
+                  </div>
+                  
             </div>
 
-            <canvas id="paintCanvas" width="800" height="600"></canvas>
+            <canvas id="paintCanvas" width="100" height="100"></canvas>
             
         </div>  
     </main>

@@ -4,6 +4,7 @@ const context = canvas.getContext("2d");
 let isDrawing = false;
 let brushColor = "#000000";
 let brushSize = 5;
+let isBucketActive = false;
 
 // Function to resize the canvas
 function resizeCanvas() {
@@ -13,8 +14,8 @@ function resizeCanvas() {
   tempCanvas.height = canvas.height;
   tempCtx.drawImage(canvas, 0, 0);
 
-  canvas.width = window.innerWidth * 0.9; // 90% of screen width
-  canvas.height = window.innerHeight * 0.7; // 70% of screen height
+  canvas.width = window.innerWidth * 1; // 100% of screen width
+  canvas.height = window.innerHeight * .7; // 70% of screen height
 
   context.drawImage(tempCanvas, 0, 0);
 }
@@ -78,11 +79,24 @@ document.getElementById("brushSize").addEventListener("input", (e) => {
   brushSize = e.target.value;
 });
 
-document.getElementById("clearCanvas").addEventListener("click", clearCanvas);
-document
-  .getElementById("downloadCanvas")
-  .addEventListener("click", downloadCanvas);
+document.getElementById("bucketTool").addEventListener("click", () => {
+  isBucketActive = !isBucketActive; // Toggle the bucket tool
+  const bucketButton = document.getElementById("bucketTool");
+  
+  // Toggle the active class on the button to change its icon color
+  if (isBucketActive) {
+    bucketButton.classList.add("active");
+  } else {
+    bucketButton.classList.remove("active");
+  }
 
+  // Show a popup that the feature isn't working
+  alert("The fill feature is not working yet.");
+});
+
+
+document.getElementById("clearCanvas").addEventListener("click", clearCanvas);
+document.getElementById("downloadCanvas").addEventListener("click", downloadCanvas);
 // Resize canvas on window resize
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas(); // Initial setup

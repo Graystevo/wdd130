@@ -178,26 +178,26 @@ footer .social-links img {
 .paint-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 10px;
+    align-items: left;
+    background-color: #dfdfdf;
 }
 
 #paintCanvas {
-    width: 100%;
+    width: 99%;
     height: auto;
     display: block;
     border: 1px solid #000;
     cursor: crosshair;
+    align-self: center;
+    background-color: #ffffff;
 }
 
 .top-bar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color: #f4f4f4;
+    justify-content: center;
     padding: 10px;
-    position: sticky;
+    position: static;
     top: 0;
     z-index: 10;
 }
@@ -208,22 +208,26 @@ footer .social-links img {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 0px;
+    margin-left: 10px;
 }
 
 .top-bar .icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1b1b1b;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
 
 #colorPicker,
 #brushSize {
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid #1b1b1b;
     border-radius: 4px;
     font-size: 16px;
-    width: 80px;
+    width: 50px;
+    background-color: #ffffff;
 }
 
 button {
@@ -232,11 +236,57 @@ button {
     cursor: pointer;
 }
 
-button .icon {
+button:hover .icon {
+    filter: brightness(0.8);
+}
+
+#bucketTool {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#bucketTool .icon {
     width: 32px;
     height: 32px;
 }
 
-button:hover .icon {
+#bucketTool:hover .icon {
     filter: brightness(0.8);
+}
+
+/* Default icon color (grayscale) */
+.icon {
+    filter: grayscale(100%); /* By default, the icon is grayscale */
+    transition: filter 0.2s; /* Smooth transition */
+}
+
+/* When the icon is active */
+    .toolButton.active .icon {
+    filter: grayscale(0%); /* Remove grayscale to show the icon in color */
+}
+
+/* Popup style */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#closePopup {
+    margin-top: 10px;
 }
