@@ -173,35 +173,70 @@ footer .social-links img {
 }
 
 
-/* EVERYTHING REQUIRED FOR UNIQUE PROJ PAGES GOES BELOW */
-
-main {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
-    gap: 20px;
-    padding: 20px;
-}
+/* EVERYTHING REQUIRED FOR UNIQUE PROJECT PAGE GOES BELOW */
 
 .paint-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin: 20px;
+    margin: 10px;
 }
 
 #paintCanvas {
+    width: 100%;
+    height: auto;
+    display: block;
     border: 1px solid #000;
     cursor: crosshair;
 }
 
-.controls {
+.top-bar {
     display: flex;
-    gap: 10px;
     align-items: center;
+    justify-content: space-around;
+    background-color: #f4f4f4;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-.controls label {
+.top-bar label,
+.top-bar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     margin-right: 5px;
+    margin-left: 5px;
+}
+
+.top-bar .icon {
+    width: 24px;
+    height: 24px;
+}
+
+#colorPicker,
+#brushSize {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button .icon {
+    width: 32px;
+    height: 32px;
+}
+
+button:hover .icon {
+    filter: brightness(0.8);
 }

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paint Project</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="../scripts/paint.js" defer></script>
+    <script src="./scripts/paint.js" defer></script>
 
 </head>
 <body>
     <header>
         <div class="header-grid">
             <div class="logo">
-                <img src="../images/project_one_logo.png" alt="Logo">
+                <img src="../images/Microsoft_Paint.png" alt="Logo">
             </div>
             <div class="header-title">
                 <h1>Welcome to Project 1: Paint</h1>
@@ -31,19 +31,22 @@
     <main>
         <!-- Page content goes here -->
         <div class="paint-container">
-            <canvas id="paintCanvas" width="800" height="600"></canvas>
-            <div class="controls">
+            <div class="top-bar">
                 <label for="colorPicker">Brush Color:</label>
                 <input type="color" id="colorPicker" value="#000000">
-                
                 <label for="brushSize">Brush Size:</label>
                 <input type="number" id="brushSize" min="1" max="50" value="5">
-                
-                <button id="clearCanvas">Clear Canvas</button>
-                <button id="downloadCanvas">Download</button>
+                <button id="clearCanvas">
+                    <img src="../images/bin.png" alt="Clear Canvas" class="icon">
+                </button>
+                <button id="downloadCanvas">
+                    <img src="../images/save.png" alt="Download Canvas" class="icon">
+                </button>
             </div>
+
+            <canvas id="paintCanvas" width="800" height="600"></canvas>
+            
         </div>  
-        
     </main>
     
     <footer>
