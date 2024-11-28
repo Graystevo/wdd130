@@ -139,11 +139,10 @@ main {
     justify-content: center;
 }
 
-.main-image .image-placeholder {
-    width: 100%;
-    height: 300px;
-    background: #ddd;
-    border: 2px dashed #bbb;
+.main-image img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains the image aspect ratio */
+    border-radius: 5px; /* Optional rounded corners */
 }
 
 .buttons {
