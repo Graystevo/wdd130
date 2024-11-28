@@ -21,3 +21,37 @@ document.getElementById("brushSize").addEventListener("input", (e) => {
 
 document.getElementById("clearCanvas").addEventListener("click", clearCanvas);
 document.getElementById("downloadCanvas").addEventListener("click", downloadCanvas);
+
+
+function startDrawing(e) {
+    isDrawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+}
+
+function draw(e) {
+    if (!isDrawing) return;
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = brushColor;
+
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+}
+
+function stopDrawing() {
+    isDrawing = false;
+    ctx.closePath();
+}
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function downloadCanvas() {
+    const link = document.createElement("a");
+    link.download = "my-drawing.png";
+    link.href = canvas.toDataURL();
+    link.click();
+}
+
