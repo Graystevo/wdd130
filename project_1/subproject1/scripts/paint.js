@@ -11,19 +11,23 @@ let tempContext = tempCanvas.getContext("2d"); // Drawing context for tempCanvas
 
 // Function to resize the canvas
 function resizeCanvas() {
+  // Save current content (drawings) on a temporary canvas
+  const tempWidth = canvas.width;
+  const tempHeight = canvas.height;
+
   // Resize the main canvas
   canvas.width = window.innerWidth * 0.9; // 90% of screen width
   canvas.height = window.innerHeight * 0.7; // 70% of screen height
 
-  // Resize the temporary canvas to match the main canvas
+  // Resize the temporary canvas to match the new main canvas size
   tempCanvas.width = canvas.width;
   tempCanvas.height = canvas.height;
 
   // Reapply the background color to the canvas
   setCanvasBackgroundColor(backgroundColor);
 
-  // Redraw the content (anything drawn before resizing)
-  context.drawImage(tempCanvas, 0, 0); // Draw the drawing layer back onto the canvas
+  // Redraw the content (drawings) from the temporary canvas
+  context.drawImage(tempCanvas, 0, 0);
 }
 
 // Function to get mouse position relative to the canvas
@@ -70,7 +74,9 @@ function setCanvasBackgroundColor(color) {
 
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
+  setCanvasBackgroundColor(backgroundColor); // Keep the background color when clearing
 }
+
 
 function downloadCanvas() {
   const link = document.createElement("a");
