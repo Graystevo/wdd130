@@ -1,26 +1,32 @@
 const canvas = document.getElementById("paintCanvas");
 const context = canvas.getContext("2d");
 
+let backgroundColor = "#ffffff"; // Default background color
 let isDrawing = false;
 let brushColor = "#000000";
 let brushSize = 5;
 let isBucketActive = false;
+let tempCanvas = document.createElement("canvas"); // Temporary canvas to hold drawings
+let tempContext = tempCanvas.getContext("2d"); // Drawing context for tempCanvas
 
 // Function to resize the canvas
 function resizeCanvas() {
-  const tempCanvas = document.createElement("canvas");
-  const tempCtx = tempCanvas.getContext("2d");
-  tempCanvas.width = canvas.width;
-  tempCanvas.height = canvas.height;
-  tempCtx.drawImage(canvas, 0, 0);
-
-  canvas.width = window.innerWidth * 1; // 100% of screen width
+  // Resize the main canvas
+  canvas.width = window.innerWidth * 0.9; // 90% of screen width
   canvas.height = window.innerHeight * 0.7; // 70% of screen height
 
-  context.drawImage(tempCanvas, 0, 0);
+  // Resize the temporary canvas to match the main canvas
+  tempCanvas.width = canvas.width;
+  tempCanvas.height = canvas.height;
+
+  // Reapply the background color to the canvas
+  setCanvasBackgroundColor(backgroundColor);
+
+  // Redraw the content (anything drawn before resizing)
+  context.drawImage(tempCanvas, 0, 0); // Draw the drawing layer back onto the canvas
 }
 
-// Function to get mouse position on the canvas
+// Function to get mouse position relative to the canvas
 function getMousePosition(event) {
   const rect = canvas.getBoundingClientRect();
   return {
@@ -33,27 +39,35 @@ function getMousePosition(event) {
 function startDrawing(event) {
   isDrawing = true;
   const pos = getMousePosition(event);
-  context.beginPath();
-  context.moveTo(pos.x, pos.y);
+  tempContext.beginPath();
+  tempContext.moveTo(pos.x, pos.y);
 }
 
 function draw(event) {
   if (!isDrawing) return;
   const pos = getMousePosition(event);
-  context.lineWidth = brushSize;
-  context.lineCap = "flat";
-  context.strokeStyle = brushColor;
-
-  context.lineTo(pos.x, pos.y);
-  context.stroke();
+  tempContext.lineWidth = brushSize;
+  tempContext.lineCap = "round";
+  tempContext.strokeStyle = brushColor;
+  tempContext.lineTo(pos.x, pos.y);
+  tempContext.stroke();
+  context.drawImage(tempCanvas, 0, 0); // Redraw the temporary canvas content over the main canvas
 }
 
 function stopDrawing() {
   isDrawing = false;
-  context.closePath();
+  tempContext.closePath();
 }
 
 // Utility Functions
+
+// Function to set the canvas background color
+function setCanvasBackgroundColor(color) {
+  context.fillStyle = color;
+  context.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas with the selected color
+  backgroundColor = color; // Store the selected background color
+}
+
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
@@ -102,6 +116,18 @@ document.getElementById("closePopup").addEventListener("click", () => {
 
 document.getElementById("clearCanvas").addEventListener("click", clearCanvas);
 document.getElementById("downloadCanvas").addEventListener("click", downloadCanvas);
+
 // Resize canvas on window resize
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas(); // Initial setup
+
+
+// Set the background color
+document.getElementById("backgroundColorBtn").addEventListener("click", () => {
+  const picker = document.getElementById("backgroundColorPicker");
+  picker.click(); // Open the hidden color picker
+});
+
+document.getElementById("backgroundColorPicker").addEventListener("input", (e) => {
+  setCanvasBackgroundColor(e.target.value);
+});

@@ -32,12 +32,15 @@
         <!-- Page content goes here -->
         <div class="paint-container">
             <div class="top-bar">
+                <button id="backgroundColorBtn">BG Color: </button>
+                <input type="color" id="backgroundColorPicker">
+                
                 <button id="bucketTool" class="toolButton">
                     <img src="../images/paint-bucket.png" alt="Bucket Tool" class="icon">
                 </button>
-                <label for="colorPicker">Brush Color:</label>
+                <label for="colorPicker">Brush Color: </label>
                 <input type="color" id="colorPicker" value="#000000">
-                <label for="brushSize">Brush Size:</label>
+                <label for="brushSize">Brush Size: </label>
                 <input type="number" id="brushSize" min="1" max="50" value="5">
                 <button id="clearCanvas">
                     <img src="../images/bin.png" alt="Clear Canvas" class="icon">
