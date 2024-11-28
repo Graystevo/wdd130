@@ -1,292 +1,290 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 /* Layout Styling */
 header {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
 }
 
 .header-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Logo, Title, Empty Space */
-    grid-template-rows: auto auto; /* Separate rows for title and nav */
-    gap: 10px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Logo, Title, Empty Space */
+  grid-template-rows: auto auto; /* Separate rows for title and nav */
+  gap: 10px;
+  align-items: center;
 }
 
 /* Logo Styling */
 .logo img {
-    grid-column: 1 / 2; /* Place in the first column */
-    width: 80px;
-    height: auto;
-    justify-self: start;
+  grid-column: 1 / 2; /* Place in the first column */
+  width: 80px;
+  height: auto;
+  justify-self: start;
 }
 
 .header-title {
-    grid-column: 2 / 3; /* Span across the middle and right columns */
-    grid-row: 1 / 1;
-    text-align: center;
+  grid-column: 2 / 3; /* Span across the middle and right columns */
+  grid-row: 1 / 1;
+  text-align: center;
 }
 
 .header-title h1 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 5px;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .header-title p {
-    font-size: 1rem;
-    color: #666;
+  font-size: 1rem;
+  color: #666;
 }
 
 .header-nav {
-    grid-column: 2 / 3; /* Span full width below the title */
-    grid-row: 2 / 3; /* Second row for nav */
-    text-align: center;
-    margin-top: -20px;
+  grid-column: 2 / 3; /* Span full width below the title */
+  grid-row: 2 / 3; /* Second row for nav */
+  text-align: center;
+  margin-top: -20px;
 }
 
 .header-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 .header-nav li {
-    display: inline;
+  display: inline;
 }
 
 .header-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .header-nav a:hover {
-    color: #005a99;
+  color: #005a99;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    
-    gap: 15px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+
+  gap: 15px;
 }
 
 nav ul li {
-    display: inline; /* Display list items in a line */
-    margin: 0 15px; /* Space between items */
+  display: inline; /* Display list items in a line */
+  margin: 0 15px; /* Space between items */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #0078D4;
+  color: #0078d4;
 }
 
-
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
 }
 
 /* Project Links */
 .projects {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .project-link {
-    font-size: 1.5rem;
-    color: #0078D4;
-    text-decoration: none;
-    border: 2px solid #0078D4;
-    border-radius: 5px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
+  font-size: 1.5rem;
+  color: #0078d4;
+  text-decoration: none;
+  border: 2px solid #0078d4;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
 }
 
 .project-link:hover {
-    background-color: #0078D4;
-    color: white;
+  background-color: #0078d4;
+  color: white;
 }
 
 /* Footer Styling */
 footer {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Logo, Title, Empty Space */
-    grid-template-rows: auto auto; /* Separate rows for title and nav */
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #999;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Logo, Title, Empty Space */
+  grid-template-rows: auto auto; /* Separate rows for title and nav */
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #999;
 }
 
 footer p {
-    grid-column: 2 / 3;
-    text-align: center;
+  grid-column: 2 / 3;
+  text-align: center;
 }
 
 footer .social-links {
-    grid-column: 3 / 4;
-    text-align: center;
+  grid-column: 3 / 4;
+  text-align: center;
 }
 
 footer .social-links li {
-    grid-column: 1 / 3; /* Move the <li> to span columns 1 and 2 */
+  grid-column: 1 / 3; /* Move the <li> to span columns 1 and 2 */
 }
 
 footer .social-links img {
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  cursor: pointer;
 }
-
 
 /* EVERYTHING REQUIRED FOR UNIQUE PROJECT PAGE GOES BELOW */
 
 .paint-container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    background-color: #dfdfdf;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #dfdfdf;
 }
 
 #paintCanvas {
-    width: 99%;
-    height: auto;
-    display: block;
-    border: 1px solid #000;
-    cursor: crosshair;
-    align-self: center;
-    background-color: #ffffff;
+  width: 99%;
+  height: auto;
+  display: block;
+  border: 1px solid #000;
+  cursor: crosshair;
+  align-self: center;
+  background-color: #ffffff;
 }
 
 .top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    position: static;
-    top: 0;
-    z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: static;
+  top: 0;
+  z-index: 10;
 }
 
 .top-bar label,
 .top-bar button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-right: 0px;
-    margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 0px;
+  margin-left: 10px;
 }
 
 .top-bar .icon {
-    width: 32px;
-    height: 32px;
-    border: 2px solid #1b1b1b;
-    border-radius: 4px;
-    background-color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #1b1b1b;
+  border-radius: 4px;
+  background-color: #ffffff;
 }
 
 #colorPicker,
 #brushSize {
-    padding: 5px;
-    border: 2px solid #1b1b1b;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 50px;
-    background-color: #ffffff;
+  padding: 5px;
+  border: 2px solid #1b1b1b;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 50px;
+  background-color: #ffffff;
 }
 
 button {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover .icon {
-    filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 
 #bucketTool {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 #bucketTool .icon {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 #bucketTool:hover .icon {
-    filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 
 /* Default icon color (grayscale) */
 .icon {
-    filter: grayscale(100%); /* By default, the icon is grayscale */
-    transition: filter 0.2s; /* Smooth transition */
+  filter: grayscale(100%); /* By default, the icon is grayscale */
+  transition: filter 0.2s; /* Smooth transition */
 }
 
 /* When the icon is active */
-    .toolButton.active .icon {
-    filter: grayscale(0%); /* Remove grayscale to show the icon in color */
+.toolButton.active .icon {
+  filter: grayscale(0%); /* Remove grayscale to show the icon in color */
 }
 
 /* Popup style */
 .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 #closePopup {
-    margin-top: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
 }

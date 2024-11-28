@@ -15,7 +15,7 @@ function resizeCanvas() {
   tempCtx.drawImage(canvas, 0, 0);
 
   canvas.width = window.innerWidth * 1; // 100% of screen width
-  canvas.height = window.innerHeight * .7; // 70% of screen height
+  canvas.height = window.innerHeight * 0.7; // 70% of screen height
 
   context.drawImage(tempCanvas, 0, 0);
 }
@@ -79,21 +79,26 @@ document.getElementById("brushSize").addEventListener("input", (e) => {
   brushSize = e.target.value;
 });
 
+// Show the popup when the bucket tool is clicked
 document.getElementById("bucketTool").addEventListener("click", () => {
   isBucketActive = !isBucketActive; // Toggle the bucket tool
   const bucketButton = document.getElementById("bucketTool");
-  
-  // Toggle the active class on the button to change its icon color
+
+  // Toggle the active class on the button to change the icon color
   if (isBucketActive) {
     bucketButton.classList.add("active");
   } else {
     bucketButton.classList.remove("active");
   }
 
-  // Show a popup that the feature isn't working
-  alert("The fill feature is not working yet.");
+  // Show the popup modal
+  document.getElementById("popup").style.display = "flex";
 });
 
+// Close the popup when the close button is clicked
+document.getElementById("closePopup").addEventListener("click", () => {
+  document.getElementById("popup").style.display = "none";
+});
 
 document.getElementById("clearCanvas").addEventListener("click", clearCanvas);
 document.getElementById("downloadCanvas").addEventListener("click", downloadCanvas);
